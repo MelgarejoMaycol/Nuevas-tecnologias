@@ -1,0 +1,456 @@
+/* Dashboard Styles - Estilos mejorados para los dashboards */
+
+/* Variables CSS para consistencia */
+:root {
+  --primary-color: #007bff;
+  --success-color: #28a745;
+  --info-color: #17a2b8;
+  --warning-color: #ffc107;
+  --danger-color: #dc3545;
+  --light-color: #f8f9fa;
+  --dark-color: #343a40;
+  --border-radius: 12px;
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+/* Estilos generales del body */
+body {
+  background: #ffffff;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Contenedor principal */
+.dashboard-container {
+  padding: 2rem 0;
+  min-height: 100vh;
+}
+
+/* Header del dashboard */
+.dashboard-header {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  margin-bottom: 2rem;
+  border: none;
+}
+
+.dashboard-title {
+  color: var(--dark-color);
+  font-weight: 600;
+  margin: 0;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  min-width: 0; /* Para permitir que el contenido se ajuste */
+}
+
+/* Estilos para el layout del header */
+.dashboard-header .d-flex > div:first-child,
+.dashboard-header .d-flex > div:last-child {
+  flex: 0 0 auto;
+  min-width: 200px; /* Ancho mínimo para los lados */
+}
+
+.dashboard-header .text-center.flex-grow-1 {
+  flex: 1 1 auto;
+}
+
+.user-badge {
+  background: linear-gradient(45deg, var(--primary-color), #0056b3);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  font-weight: 500;
+}
+
+/* Cards de acciones */
+.action-card {
+  border: none;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  height: 100%;
+}
+
+.action-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.action-card-body {
+  padding: 2rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-icon {
+  font-size: 2.5rem;
+  opacity: 0.8;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.card-description {
+  opacity: 0.9;
+  margin-bottom: 1rem;
+}
+
+.card-button {
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  border-radius: 25px;
+  padding: 0.5rem 1.5rem;
+  font-weight: 500;
+  transition: var(--transition);
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+
+.card-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+  color: white;
+  text-decoration: none;
+  transform: scale(1.05);
+}
+
+/* Gradientes para las cards */
+.card-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.card-success {
+  background: linear-gradient(135deg, #56ab2f 0%, #a8e6cf 100%);
+}
+
+.card-info {
+  background: linear-gradient(135deg, #3ca55c 0%, #b5fffc 100%);
+}
+
+.card-warning {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.card-danger {
+  background: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%);
+}
+
+/* Panel de información */
+.info-panel {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border: none;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  margin-top: 2rem;
+}
+
+.info-panel .alert {
+  border: none;
+  border-radius: var(--border-radius);
+  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+  color: var(--dark-color);
+  margin: 0;
+}
+
+.info-panel .alert h5 {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+/* Botón de logout mejorado */
+.logout-btn {
+  background: linear-gradient(45deg, var(--danger-color), #c82333);
+  border: none;
+  border-radius: 25px;
+  padding: 0.5rem 1rem;
+  color: white;
+  font-weight: 500;
+  transition: var(--transition);
+  text-decoration: none;
+}
+
+.logout-btn:hover {
+  background: linear-gradient(45deg, #c82333, #a71e2a);
+  color: white;
+  text-decoration: none;
+  transform: scale(1.05);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .dashboard-container {
+    padding: 1rem 0;
+  }
+  
+  .dashboard-header .d-flex {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .dashboard-header .d-flex > div:first-child,
+  .dashboard-header .d-flex > div:last-child {
+    min-width: auto;
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .dashboard-header .text-center.flex-grow-1 {
+    order: -1; /* Poner el título primero en móviles */
+  }
+  
+  .user-info {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .action-card-body {
+    padding: 1.5rem;
+  }
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Efectos de hover para iconos */
+.card-icon {
+  transition: var(--transition);
+}
+
+.action-card:hover .card-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* Mejoras para las estadísticas */
+.stats-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+}
+
+.stats-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.stat-number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.stat-label {
+  color: var(--dark-color);
+  font-weight: 500;
+}
+
+/* Estilos adicionales para el Dashboard de Admin */
+.stats-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    border: 1px solid #e9ecef;
+}
+
+.stats-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    color: #6c757d;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Estilos para la tabla de usuarios */
+.table {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.table thead.thead-dark th {
+    background: linear-gradient(45deg, #343a40, #495057);
+    border: none;
+    color: white;
+    padding: 15px;
+    font-weight: 600;
+}
+
+.table tbody tr {
+    transition: background-color 0.3s ease;
+}
+
+.table tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+.table td {
+    padding: 12px 15px;
+    vertical-align: middle;
+    border-top: 1px solid #e9ecef;
+}
+
+.badge {
+    padding: 6px 12px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.btn-group .btn {
+    padding: 4px 8px;
+    font-size: 0.8rem;
+}
+
+/* Estilos para modales */
+.modal-header {
+    background: linear-gradient(45deg, #007bff, #0056b3);
+    color: white;
+    border-bottom: none;
+}
+
+.modal-header .close {
+    color: white;
+    opacity: 0.8;
+}
+
+.modal-header .close:hover {
+    opacity: 1;
+}
+
+.modal-content {
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.modal-body {
+    padding: 30px;
+}
+
+.modal-footer {
+    border-top: 1px solid #e9ecef;
+    padding: 20px 30px;
+}
+
+/* Cards de acción en admin */
+.action-card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.action-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.action-card.card-primary {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+}
+
+.action-card.card-success {
+    background: linear-gradient(135deg, #28a745, #1e7e34);
+    color: white;
+}
+
+.action-card.card-warning {
+    background: linear-gradient(135deg, #ffc107, #e0a800);
+    color: white;
+}
+
+.action-card.card-info {
+    background: linear-gradient(135deg, #17a2b8, #117a8b);
+    color: white;
+}
+
+.action-card.card-danger {
+    background: linear-gradient(135deg, #dc3545, #c82333);
+    color: white;
+}
+
+.action-card-body {
+    padding: 25px;
+    position: relative;
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    opacity: 0.3;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.card-description {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    margin-bottom: 20px;
+}
+
+.card-button {
+    display: inline-block;
+    padding: 8px 20px;
+    background: rgba(255,255,255,0.2);
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.card-button:hover {
+    background: rgba(255,255,255,0.3);
+    color: white;
+    text-decoration: none;
+    transform: scale(1.05);
+}
