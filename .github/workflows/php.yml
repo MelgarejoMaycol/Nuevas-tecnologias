@@ -1,0 +1,31 @@
+name: CI - PHP
+
+# 📅 Cuándo se ejecuta
+on:
+  push:
+    branches: [ main ]   # Se ejecuta cuando hagas push a la rama main
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1️⃣ Clonar el repositorio
+      - name: 📥 Clonar el repositorio
+        uses: actions/checkout@v3
+
+      # 2️⃣ Instalar PHP
+      - name: 🧰 Configurar PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+
+      # 3️⃣ Validar sintaxis PHP
+      - name: ✅ Validar sintaxis PHP
+        run: find . -type f -name "*.php" -exec php -l {} \;
+
+      # 4️⃣ Mensaje final
+      - name: 🎉 Pipeline completado
+        run: echo "Pipeline ejecutado correctamente 🎯"
