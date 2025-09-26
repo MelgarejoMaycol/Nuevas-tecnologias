@@ -1,0 +1,21 @@
+name: 🚀 Deploy to InfinityFree
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Clonar el repositorio
+        uses: actions/checkout@v3
+
+      - name: 🚀 Subir archivos al hosting
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.ftpupload.net }}
+          username: ${{ secrets.if0_40027615 }}
+          password: ${{ secrets.uZQW4GamAf1cl7 }}
+          server-dir: /htdocs/
