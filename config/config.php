@@ -1,6 +1,6 @@
 <?php
 // 🔹 Configuración de la base de datos en InfinityFree
-define('DB_HOST', 'sqlXXX.infinityfree.com');
+define('DB_HOST', 'sql305.infinityfree.com');
 define('DB_NAME', 'if0_40027615_proyecto_tickets');
 define('DB_USER', 'if0_40027615'); 
 define('DB_PASS', 'uZQW4GamAf1cl7'); 
